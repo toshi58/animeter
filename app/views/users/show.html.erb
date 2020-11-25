@@ -1,0 +1,70 @@
+<%= render "shared/header" %>
+
+<div class='my-page-contents'>
+  <h1><%= @user.nickname %>さんのマイページ</h1>
+  <div class='my-page-content'>
+    <h2 class='my-page-title'>お気に入りのアニメ</h2>
+    <div class='item-contents'>
+      <ul class='item-lists'>
+        <% @liked_animes.each do |anime| %>
+          <li class='list'>
+            <%= link_to anime_path(anime.id) do %>
+              <div class='item-img-content'>
+                <%= image_tag anime.image.variant(resize: '200x200'), class: "item-img" %>
+              </div>
+              <div class='item-info'>
+                <h3 class='item-name'>
+                  <%= anime.name %>
+                </h3>
+              </div>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class='my-page-content'>
+    <h2 class='my-page-title'>見たアニメ</h2>
+    <div class='item-contents'>
+      <ul class='item-lists'>
+        <% @watched_animes.each do |anime| %>
+          <li class='list'>
+            <%= link_to anime_path(anime.id) do %>
+              <div class='item-img-content'>
+                <%= image_tag anime.image.variant(resize: '200x200'), class: "item-img" %>
+              </div>
+              <div class='item-info'>
+                <h3 class='item-name'>
+                  <%= anime.name %>
+                </h3>
+              </div>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class='my-page-content'>
+    <h2 class='my-page-title'>見たいアニメ</h2>
+    <div class='item-contents'>
+      <ul class='item-lists'>
+        <% @wanted_animes.each do |anime| %>
+          <li class='list'>
+            <%= link_to anime_path(anime.id) do %>
+              <div class='item-img-content'>
+                <%= image_tag anime.image.variant(resize: '200x200'), class: "item-img" %>
+              </div>
+              <div class='item-info'>
+                <h3 class='item-name'>
+                  <%= anime.name %>
+                </h3>
+              </div>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<%= render "shared/footer" %>

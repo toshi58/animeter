@@ -1,0 +1,7 @@
+<% if user_signed_in? %>
+  <% if current_user.already_liked?(@anime) %>
+    <%= link_to 'お気に入り に登録済み', destroy_like_path(@anime), method: :delete, remote: true, class: "like-button-off" %>
+  <% else %>
+    <%= link_to 'お気に入り に追加', create_like_path(@anime), method: :post, remote: true, class: "like-button-on" %>
+  <% end %>
+<% end %>

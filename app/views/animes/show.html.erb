@@ -1,0 +1,90 @@
+<%= render "shared/header" %>
+
+<div class='anime-details'>
+  <div class='anime-detail-left'>
+    <h1 class='anime-title'><%= @anime.name %></h1>
+    <div class='anime-img-box'>
+      <%= image_tag @anime.image.variant(resize: '400x400'), class: "anime-img" %>
+    </div>
+    <div class='anime-summary'>
+      あらすじ
+      <p><%= @anime.summary %></p>
+    </div>
+  </div>
+  <div class='anime-detail-right'>
+    <div class='anime-buttons'>
+      <div class='like-contents', id='like_contents'>
+        <%= render 'shared/like' %>
+      </div>
+      <div class='watch-contents', id='watch_contents'>
+        <%= render 'shared/watch' %>
+      </div>
+      <div class='want-contents', id='want_contents'>
+        <%= render 'shared/want' %>
+      </div>
+    </div>
+    <div class='anime-reviews'>
+      <% if user_signed_in? %>
+        <%= form_with model: [@anime, @review], local: true, class: 'review-form' do |f| %>
+          <%= f.text_area :text, placeholder: "レビューを入力", class: 'review-input' %>
+          <div class='review-submit-box'>
+            <div></div>
+            <%= f.submit "投稿する", class: 'review-submit' %>
+          </div>
+        <% end %>
+      <% else %>
+        ログインするとレビューを投稿できます
+      <% end %>
+      <div class='review-contents'>
+        <h3>レビュー一覧</h3>
+        <% if @reviews.exists? %>
+          <% @reviews.each do |review| %>
+            <div class='review-content'>
+              <div class='review-top'>
+                <div class='reviewer-name'>
+                  <%= link_to review.user.nickname, user_path(review.user) %> <span><%= review.created_at %></span>
+                </div>
+                <div class='review-destroy'>
+                  <% if user_signed_in? && current_user.id == review.user_id %>
+                    <%= link_to '削除する', "/animes/#{review.anime_id}/reviews/#{review.id}", method: :delete %>
+                  <% end %>
+                </div>
+              </div>
+              <div class='review-text'>
+                <%= review.text %>
+              </div>
+              <div class='comment-contents'>
+                <% if user_signed_in? %>
+                  <%= form_with url: "/animes/#{@anime.id}/reviews/#{review.id}/comments", local: true, class: 'comment-form' do |f| %>
+                    <%= f.text_area :text, placeholder: "コメントを入力", class: 'comment-input', id: 'comment_text' %>
+                    <div class='comment-submit-box'>
+                      <%= f.submit "送信", class: 'comment-submit' %>
+                    </div>
+                  <% end %>
+                <% else %>
+                  <p>ログインするとこのレビューに対してコメントを送信できます</p>
+                <% end %>
+                <div id='comments'>
+                  <% review.comments.each do |comment| %>
+                    <div class='comment-box'>
+                      <div class='comment-name'>
+                        <%= link_to comment.user.nickname, user_path(comment.user) %> <span><%= review.created_at %></span>
+                      </div>
+                      <div class='review-text'>
+                        <%= comment.text %>
+                      </div>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% else %>
+          レビューはまだありません
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render "shared/footer" %>

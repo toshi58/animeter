@@ -1,0 +1,25 @@
+.my-page-contents {
+  width: 100vw;
+  padding: 40px 10vw 0;
+  background-color: #f5f5f5;
+}
+
+.my-page-contents > h1 {
+  font-size: 40px;
+}
+
+.my-page-content>.my-page-title {
+  margin-top: 40px;
+}
+
+.my-page-content>.item-contents {
+  padding: 0;
+}
+
+.my-page-favorite>.item-contents>.item-lists {
+  justify-content: left;
+}
+
+.my-page-title {
+  font-size: 30px;
+}

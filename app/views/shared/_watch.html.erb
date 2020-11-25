@@ -1,0 +1,7 @@
+<% if user_signed_in? %>
+  <% if current_user.already_watched?(@anime) %>
+    <%= link_to '見た に登録済み', destroy_watch_path(@anime), method: :delete, remote: true, class: "watch-button-off" %>
+  <% else %>
+    <%= link_to '見た に追加', create_watch_path(@anime), method: :post, remote: true, class: "watch-button-on" %>
+  <% end %>
+<% end %>

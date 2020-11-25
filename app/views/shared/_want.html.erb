@@ -1,0 +1,7 @@
+<% if user_signed_in? %>
+  <% if current_user.already_wanted?(@anime) %>
+    <%= link_to '見たい に登録済み', destroy_want_path(@anime), method: :delete, remote: true, class: "want-button-off" %>
+  <% else %>
+    <%= link_to '見たい に追加', create_want_path(@anime), method: :post, remote: true, class: "want-button-on" %>
+  <% end %>
+<% end %>

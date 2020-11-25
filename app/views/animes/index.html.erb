@@ -1,0 +1,39 @@
+<%= render "shared/header" %>
+
+<div class='main'>
+  <div class='title-contents'>
+    <p class='service-explain'>
+      見たアニメを記録して
+    </p>
+    <p class='service-explain'>
+      新しいアニメを見つけよう
+    </p>
+    <div class='store-btn'>
+      <%= link_to image_tag("https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2011-09-21&kind=iossoftware&bubble=ios_apps", class:"apple-btn"), "#" %>
+      <%= link_to image_tag("dl-android.png", class:"google-btn"), "#" %>
+    </div>
+  </div>
+  <%# アニメ一覧 %>
+  <div class='item-contents'>
+    <h2 class='title'>人気のアニメ</h2>
+    <ul class='item-lists'>
+      <% @top_like_animes.each_with_index do |anime, i| %>
+        <li class='list'>
+          <%= link_to anime_path(anime.id) do %>
+            <div class='item-img-content'>
+              <%= image_tag anime.image.variant(resize: '200x200'), class: "item-img" %>
+            </div>
+            <span class='reason-list-number'><%= i+1 %></span>
+            <div class='item-info'>
+              <h3 class='item-name'>
+                <%= anime.name %>
+              </h3>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <%# /アニメ一覧 %>
+</div>
+<%= render "shared/footer" %>

@@ -1,0 +1,20 @@
+<%= render "shared/header" %>
+<div class='main'>
+  <ul class='item-lists'>
+    <% @animes.each do |anime| %>
+      <li class='list'>
+        <%= link_to anime_path(anime.id) do %>
+          <div class='item-img-content'>
+            <%= image_tag anime.image.variant(resize: '200x200'), class: "item-img" %>
+          </div>
+          <div class='item-info'>
+            <h3 class='item-name'>
+              <%= anime.name %>
+            </h3>
+          </div>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+<%= render "shared/footer" %>

@@ -1,0 +1,260 @@
+.anime-details {
+  background-color: #f5f5f5;
+  padding: 3vw 10vw;
+  display:flex;
+}
+
+.anime-detail-left {
+  width: 450px;
+}
+
+.anime-title {
+  font-size: 35px;
+}
+
+.anime-img-box {
+  margin: 50px 0;
+}
+
+.anime-summary>p {
+  margin-top: 10px;
+  padding-right: 50px;
+}
+
+.anime-detail-right {
+  width: calc(100% - 450px);
+}
+
+.anime-buttons {
+  display: flex;
+}
+
+.like-contents {
+  height: 40px;
+  width: 170px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.like-button-on {
+  display: block;
+  text-decoration: none;
+  color: white;
+  background-color: #e9bb3b;
+  border: none;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  line-height: 40px;
+}
+
+.like-button-off {
+  display: block;
+  text-decoration: none;
+  color: white;
+  background-color: #e9bb3b;
+  border: none;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  line-height: 40px;
+  opacity: 0.7;
+}
+
+.watch-contents {
+  height: 40px;
+  width: 170px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.watch-button-on {
+  display: block;
+  text-decoration: none;
+  color: white;
+  background-color: #e68b36;
+  border: none;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  line-height: 40px;
+}
+
+.watch-button-off {
+  display: block;
+  text-decoration: none;
+  color: white;
+  background-color: #e68b36;
+  border: none;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  line-height: 40px;
+  opacity: 0.7;
+}
+
+.want-contents {
+  height: 40px;
+  width: 170px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.want-button-on {
+  display: block;
+  text-decoration: none;
+  color: white;
+  background-color: #5fc424;
+  border: none;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  line-height: 40px;
+}
+
+.want-button-off {
+  display: block;
+  text-decoration: none;
+  color: white;
+  background-color: #5fc424;
+  border: none;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  line-height: 40px;
+  opacity: 0.7;
+}
+
+.anime-reviews {
+  width: 100%;
+  margin: 60px 10px 0;
+}
+
+.review-input {
+  width: 100%;
+  height: 80px;
+  border: 1px solid #bbbbbb;
+  border-radius: 3px;
+  padding: 5px;
+  resize: none;
+}
+
+.review-submit-box {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.review-submit {
+  height: 45px;
+  width: 90px;
+  background-color: #4169d6;
+  border: none;
+  color: white;
+  border-radius: 3px;
+}
+
+.review-contents {
+  margin-top: 30px;
+}
+
+.review-contents>h3 {
+  font-size: 25px;
+  color: #555555;
+  margin-bottom: 10px;
+}
+
+.review-content {
+  background-color: white;
+  border-radius: 3px;
+  padding: 5px 10px;
+  margin: 10px 0;
+}
+
+.review-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.reviewer-name {
+  margin-bottom: 5px;
+}
+
+.reviewer-name>a {
+  color: black;
+}
+
+.reviewer-name>span {
+  color: #888888;
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+.review-destroy>a {
+  display: block;
+  background-color: #eb4848;
+  color: white;
+  height: 40px;
+  width: 80px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 3px;
+}
+
+.comment-contents {
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+.comment-contents>p {
+  color: #888888;
+}
+
+.comment-form {
+  display: flex;
+}
+
+.comment-input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #bbbbbb;
+  border-radius: 3px;
+  padding: 5px;
+  resize: none;
+}
+
+.comment-submit {
+  height: 40px;
+  width: 60px;
+  background-color: #4169d6;
+  border: none;
+  color: white;
+  border-radius: 3px;
+  margin-left: 10px;
+}
+
+.comment-box {
+  margin: 20px 0;
+  padding: 10px;
+  background-color: #eeeeee;
+}
+
+.comment-name {
+  margin-bottom: 5px;
+}
+
+.comment-name>a {
+  color: black;
+}
+
+.comment-name>span {
+  color: #888888;
+  margin-left: 10px;
+  font-size: 14px;
+}
