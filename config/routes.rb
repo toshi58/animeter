@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'animes#index'
   resources :users, only: [:show]
-  resources :animes, only: [:show] do
+  resources :animes, only: [:show, :new, :create] do
     collection do
       get 'search'
     end
