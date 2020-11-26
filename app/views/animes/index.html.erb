@@ -1,5 +1,7 @@
 <%= render "shared/header" %>
-
+<% if user_signed_in? && current_user.admin? %>
+  <%= link_to '投稿する', new_anime_path %>
+<% end %>
 <div class='main'>
   <div class='title-contents'>
     <p class='service-explain'>

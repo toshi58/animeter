@@ -9,4 +9,11 @@ class Anime < ApplicationRecord
   has_many :wanted_users, through: :wants, source: :user
 
   has_many :reviews
+
+  with_options presence: true do
+    validates :image
+    validates :name
+    validates :furigana
+    validates :summary
+  end
 end

@@ -1,0 +1,12 @@
+<%= render "shared/header" %>
+<%= form_with model: @anime, url: animes_path, local: true do |f| %>
+  <p>画像</p>
+  <%= f.file_field :image %>
+  <p>名前</p>
+  <%= f.text_field :name %>
+  <p>ふりがな</p>
+  <%= f.text_field :furigana %>
+  <p>あらすじ</p>
+  <%= f.text_area :summary %>
+  <%= f.submit "投稿する" %>
+<% end %>
