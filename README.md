@@ -10,10 +10,12 @@ http://54.250.36.219/
 
 # BASIC認証
 ユーザー名:admin
+
 パスワード:2222
 
 # テスト用アカウント
 email:test@test
+
 password:test123aaa
 
 # 利用方法
