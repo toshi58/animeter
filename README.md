@@ -38,6 +38,8 @@ password:test123aaa
 
 ## テーブル設計
 
+![er](https://user-images.githubusercontent.com/60538998/100959277-4a533900-3561-11eb-8ea0-e4f8d85ab3e5.png)
+
 ### usersテーブル
 | Column          | Type   | Options                   |
 | --------------- | ------ | ------------------------- |
