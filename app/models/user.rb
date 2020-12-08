@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  
+
   validates :nickname, presence: true
 
   has_many :likes, dependent: :destroy
@@ -17,12 +17,14 @@ class User < ApplicationRecord
   has_many :comments
 
   def already_liked?(anime)
-    self.likes.exists?(anime_id: anime.id)
+    likes.exists?(anime_id: anime.id)
   end
+
   def already_watched?(anime)
-    self.watches.exists?(anime_id: anime.id)
+    watches.exists?(anime_id: anime.id)
   end
+
   def already_wanted?(anime)
-    self.wants.exists?(anime_id: anime.id)
+    wants.exists?(anime_id: anime.id)
   end
 end

@@ -5,7 +5,7 @@ RSpec.describe Comment, type: :model do
     before do
       @comment = FactoryBot.build(:comment)
     end
-    
+
     context '新規投稿できるとき' do
       it 'textが正しく存在すれば投稿できる' do
         expect(@comment).to be_valid
@@ -22,13 +22,13 @@ RSpec.describe Comment, type: :model do
       it 'userと紐付いていないと投稿できない' do
         @comment.user = nil
         @comment.valid?
-        expect(@comment.errors.full_messages).to include("User must exist")
+        expect(@comment.errors.full_messages).to include('User must exist')
       end
 
       it 'reviewと紐付いていないと投稿できない' do
         @comment.review = nil
         @comment.valid?
-        expect(@comment.errors.full_messages).to include("Review must exist")
+        expect(@comment.errors.full_messages).to include('Review must exist')
       end
     end
   end

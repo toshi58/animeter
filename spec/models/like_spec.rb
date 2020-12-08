@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Like, type: :model do
   describe 'お気に入り登録' do
-    before do 
+    before do
       @like = FactoryBot.build(:like)
     end
 
@@ -16,13 +16,13 @@ RSpec.describe Like, type: :model do
       it 'userと紐付いていないと登録できない' do
         @like.user = nil
         @like.valid?
-        expect(@like.errors.full_messages).to include("User must exist")
+        expect(@like.errors.full_messages).to include('User must exist')
       end
 
       it 'animeと紐付いていないと登録できない' do
         @like.anime = nil
         @like.valid?
-        expect(@like.errors.full_messages).to include("Anime must exist")
+        expect(@like.errors.full_messages).to include('Anime must exist')
       end
 
       it 'userとanimeが重複していたら登録できない' do
@@ -31,7 +31,7 @@ RSpec.describe Like, type: :model do
         another_like.user = @like.user
         another_like.anime = @like.anime
         another_like.valid?
-        expect(another_like.errors.full_messages).to include("Anime has already been taken")
+        expect(another_like.errors.full_messages).to include('Anime has already been taken')
       end
     end
   end
