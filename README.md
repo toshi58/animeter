@@ -54,4 +54,5 @@ password:test123aaa
 - image_processing
 - rspec-rails
 - factory_bot_rails
+- faker
 - unicorn
