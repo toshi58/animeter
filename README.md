@@ -43,6 +43,10 @@ password:test123aaa
 
 ![er](https://user-images.githubusercontent.com/60538998/100959277-4a533900-3561-11eb-8ea0-e4f8d85ab3e5.png)
 
+## 今後の実装機能
+- フォロー機能
+- お気に入り数の表示
+
 ## 使用言語・フレームワーク
 - Ruby 2.6.5
 - Ruby on Rails 6.0.3
