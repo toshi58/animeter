@@ -1,0 +1,25 @@
+version: '3'
+
+volumes:
+  db-data:
+
+services:
+  web:
+    build: .
+    ports:
+      - '3000:3000'
+    volumes:
+      - '.:/animeter'
+    tty: true
+    stdin_open: true
+    depends_on:
+      - db
+    links:
+      - db
+    env_file: development.env
+  
+  db:
+    image: mysql:5.6
+    volumes:
+      - 'db-data:/var/lib/mysql'
+    env_file: development.env
