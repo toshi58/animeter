@@ -5,7 +5,7 @@
 また、アニメに対してレビューを投稿することができ、それにコメントする形でユーザー同士で交流することができます。
 
 ## URL
-http://anime-meter.com/  
+https://animeter-31085.herokuapp.com/
 
 ## BASIC認証
 ユーザー名:admin
